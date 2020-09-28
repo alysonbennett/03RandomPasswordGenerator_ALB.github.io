@@ -11,40 +11,30 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
   </head>
 
-  <body>    
-      <div class="container">
-    <h1>Password Generator</h1>
+  <body>
+    <nav class="bg-dark text-light py-2">
+      <div class="container"><h1>Password Generator</h1></div>
+    </nav>
 
-      <div class="row">
-        <div class="col-sm-12">
-          <h2>Generate a Password</h2>
-          <hr/>
-          <textarea readonly 
-            id="displayPassword"
-            placeholder="Your Secure Password"
-            aria-label="displayPassword">
-            Your Secure Password
-            </textarea>
-          <div class="row">
-            <div class="col-sm-12">
-              <hr />
-              <div class="row">
-                <div class="col-8 col-sm-6">
-                  <button class="btn btn-danger" id="generatePassword">
-                    Generate Password
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="container d-flex flex-column text-center border p-3 mt-3">
+      <h2>Generate a Password</h2>
+      <hr />
+      <textarea
+        class="w-100 text-center"
+        readonly
+        id="displayPassword"
+        placeholder="Your Secure Password"
+      >Your Secure Password
+            </textarea
+      >
+      <button class="btn btn-danger mx-auto mt-3" id="generatePassword">
+        Generate Password
+      </button>
     </div>
 
-    <script src="./script.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -60,5 +50,6 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js"></script>
   </body>
 </html>
