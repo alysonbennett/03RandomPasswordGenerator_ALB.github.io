@@ -1,26 +1,23 @@
-// Define variables
-
-var letterLower = 'abcdefghijklmnopqrstuvwxyz';
-var letterUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var number = '1234567890';
-var symbol = '!@#$^&%*()+=-[]{}|:<>?,.';
-
-// var passwordLength = "";
-// var confirmLetterLower;
-// var confirmLetterUpper;
-// var confirmNumber;
-// var confirmsymbol;
-
-var choices;
-
-
 // Starting fuctions when user clicks "Generate Password" button
-document.querySelector("#generatePassword").addEventListener("click", randomPassword);
+document.querySelector("#generatePassword").addEventListener("click", writePassword);
+
+// Define variables
+var confirmLetterLower;
+var confirmLetterUpper;
+var confirmNumber;
+var confirmsymbol;
+
+var letterLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var letterUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var symbol = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+
+var passwordLength;
 
 // Ask user for password length, between 8-128 characters
 
 function generatePassword() {
-    var passwordLength = parseInt(prompt("How many characters would you like your password to contain, between 8-128?"));
+    var passwordLength = prompt("How many characters would you like your password to contain, between 8-128?");
     while (passwordLength <= 7 || passwordLength >= 129) {
         alert("Please select a number bewtween 8-128");
         var passwordLength = (prompt("How many characters would you like your password to contain, between 8-128?"));
@@ -34,20 +31,17 @@ function generatePassword() {
     var confirmSymbol = confirm("Click OK if you would like to include special characters in your password");
 
     // If user replies no to all above questions, alert them to choose at least one
-    if (confirmLetterLower === false && confirmLetterUpper === false && confirmNumber === false && confirmSymbol === false) {
-       choices = alert("Please choose at least one category to include in your password");
-        
-        //                                   Below not needed?
-        // var confirmLetterLower = confirm("Click OK if you would like to include lowercase letters in your password");
-        // var confirmLetterUpper = confirm("Click OK if you would like to include uppercase letters in your password");
-        // var confirmNumber = confirm("Click OK if you would like to include numbers in your password");
-        // var confirmsymbol = confirm("Click OK if you would like to include special characters in your password");
+    while (confirmLetterLower === false && confirmLetterUpper === false && confirmNumber === false && confirmSymbol === false) {
+        choices = alert("Please choose at least one category to include in your password");
     }
 
 
 
     // If user confirms all 4 choices
-    else if (confirmLetterLower && confirmLetterUpper && confirmNumber && confirmSymbol) {
+
+    var choices = [];
+
+    if (confirmLetterLower && confirmLetterUpper && confirmNumber && confirmSymbol) {
         choices = letterLower.concat(letterUpper, number, symbol);
     }
 
@@ -90,7 +84,7 @@ function generatePassword() {
     }
 
     else if (confirmNumber && confirmSymbol) {
-        choices = confirmNumber.concat(symbol);
+        choices = number.concat(symbol);
     }
 
     // If user confirms 1 choice
@@ -111,32 +105,41 @@ function generatePassword() {
         choices = symbol;
     }
 
-    // Empty array for password characters
-    var randomPassword = [];
+    console.log(choices);
 
+
+
+    var password = [];
+   
     // Random selection for selected characters
     for (var i = 0; i < passwordLength; i++) {
-    var userChoices = choices[Math.floor(Math.random() * choices.passwordLength)];
-    randomPassword.push(userChoices)
- 
+        password = password + choices[Math.floor(Math.random() * choices.passwordLength)];
+        console.log(password);
+
+    
+    return password;
     }
-    // return randomPassword;
-       console.log(randomPassword);
-
 }
+// function writePassword() {
+//     var password = generatePassword();
+//     var passwordText = document.querySelector("#displaypassword");
 
+//     passwordText.value = password;
 
-
-
-
-
-
-// Generate random password
-function randomPassword() {
-    var password = generatePassword();
+// }
+// Write password to the #password input
+function writePassword() {
+    password = generatePassword();
     var passwordText = document.querySelector("#displayPassword");
+  
     passwordText.value = password;
-
-    console.log(passwordText)
-    console.log(randomPassword)
 }
+
+// // Generate random password
+// function randomPassword() {
+//     var password = generatePassword();
+//     var passwordText = document.querySelector("#displayPassword");
+//     passwordText.value = password;
+
+//     console.log(passwordText);
+    // console.log(randomPassword);
