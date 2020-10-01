@@ -23,15 +23,15 @@ After finally getting the the code to produce what I wanted, I tweaked a few thi
 ## Screen Shots of the Finalized Assignment
 This is what the user will see when they first open the website:
 
-![Beginning Site](screenshots/beginningsite.png)
+![Beginning Site](ScreenShots/BeginningSite.png)
 
 When the user clicks on the "Generate Password" button, they will be prompted to select password criteria:
 
-![Prompts](prompts.png)
+![Prompts](ScreenShots/prompts.png)
 
 After selecting their criteria, their random password will be displayed on the screen:
 
-![Random Password](final.png)
+![Random Password](ScreenShots/final.png)
 
 ## Final Thoughts
 While this project was very challenging, I feel that I learned a lot and made some progess in understanding how JavaScript works. I know I have a long way to go, but I am excited to dig in more. 
