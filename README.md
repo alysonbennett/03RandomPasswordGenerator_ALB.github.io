@@ -36,4 +36,8 @@ After selecting their criteria, their random password will be displayed on the s
 ## Final Thoughts
 While this project was very challenging, I feel that I learned a lot and made some progess in understanding how JavaScript works. I know I have a long way to go, but I am excited to dig in more. 
 
+Here is a link to the completed project: 
+
+![Completed Site Link] (https://alysonbennett.github.io/03RandomPasswordGenerator_ALB.github.io/)
+
 Thank you.
